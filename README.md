@@ -12,13 +12,29 @@ $ ./install.sh
 OK      Creating symlink ~/.emacs -> /home/arne/chemacs/.emacs
 ```
 
-
 Then you execute the `init.sh` file from this folder.
 
 1. Create the necessary profile file to chemacs switcher
 2. Open named daemonized Emacs instances
-3. Create aliases to **emacs-{profile-name}**: Open a GUI instance with the provided profile
-4. Create alises to **et-{profile-name}**: Open a Terminal instance with the provided profile
 
 The benefits of this setup is instant access to emacs instances with
 your desired profile.
+
+
+Add to your `.bashrc` or `.bash_aliases`:
+
+```shell
+# GUI instances
+alias emacs="emacsclient -c -s default"
+alias emacs.default="emacsclient -c -s default" 
+alias emacs.clojure="emacsclient -c -s clojure"
+alias emacs.roam="emacsclient -c -s roam"
+alias emacs.ledger="emacsclient -c -s ledger"
+
+# terminal instances
+alias et="emacsclient -t -s default"
+alias et.default="emacsclient -t -s default"
+alias et.clojure="emacsclient -t -s clojure"
+alias et.roam="emacsclient -t -s roam"
+alias et.ledger="emacsclient -t -s ledger"
+```
