@@ -3,7 +3,11 @@
 (load-file "~/emacs/base/bk-base-programming.el")
 (load-file "~/emacs/base/bk-base-lisps.el")
 (load-file "~/emacs/base/bk-base-git.el")
+(load-file "~/emacs/base/bk-base-projects.el")
+(load-file "~/emacs/base/bk-base-completion.el")
 
+(load-theme 'default-black t)
+(bk/set-consolas-font)
 
 (defun bk/nrepl-warn-when-not-connected ()
   "Function to warn me to start the REPL."

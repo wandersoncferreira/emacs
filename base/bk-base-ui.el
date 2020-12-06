@@ -13,12 +13,10 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-;; define consolas as default font
-(when (member "Consolas" (font-family-list))
-  (set-face-attribute 'default nil :font "Consolas" :height 130))
-
 ;; activate paren highlight
 (show-paren-mode +1)
+
+(bk/set-consolas-font)
 
 ;;; move between window
 (windmove-default-keybindings)
