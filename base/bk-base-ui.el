@@ -4,3 +4,11 @@
 
 ;; no splash screen
 (setq inhibit-startup-message t)
+
+;; setup custom themes
+(setq custom-theme-directory (concat user-emacs-directory "themes")
+      custom-safe-themes t)
+
+(dolist (path (directory-files custom-theme-directory t "\\w+"))
+  (when (file-directory-p path)
+    (add-to-list 'custom-theme-load-path path)))
